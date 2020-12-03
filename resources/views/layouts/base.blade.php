@@ -18,6 +18,8 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ url(mix('css/app.css')) }}">
+        <link rel="stylesheet" href="https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css">
+
         @livewireStyles
 
         <!-- Scripts -->
@@ -28,8 +30,11 @@
     </head>
 
     <body>
+        @include('partials.nav')
+       @include('partials.header')
         @yield('body')
-
+        @include('partials.footer')
+        @yield('js')
         @livewireScripts
     </body>
 </html>

@@ -22,6 +22,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'welcome')->name('home');
+Route::view('/tours', 'tours.index')->name('tours');
+Route::view('/tours/list', 'tours.list')->name('list');
+Route::view('/tours/list/1', 'tours.details')->name('details');
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
