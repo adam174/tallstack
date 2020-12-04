@@ -57,3 +57,8 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', LogoutController::class)
         ->name('logout');
 });
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
