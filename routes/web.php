@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TripController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Livewire\Auth\Login;
@@ -22,8 +23,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'welcome')->name('home');
-Route::view('/tours', 'tours.index')->name('tours');
-Route::view('/tours/list', 'tours.list')->name('list');
+//Route::view('/tours', 'tours.index')->name('tours');
+Route::get('/discovery/', [TripController::class, 'discovery'])->name('discovery');
+Route::get('/tours/list/{id}', [TripController::class, 'list'])->name('list');
+Route::get('/tours/details/{id}', [TripController::class, 'show'])->name('tours.details');
+//Route::view('/tours/list', 'tours.list')->name('list');
 Route::view('/tours/list/1', 'tours.details')->name('details');
 
 Route::middleware('guest')->group(function () {

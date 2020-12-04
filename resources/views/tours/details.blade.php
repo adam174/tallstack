@@ -1,41 +1,26 @@
 @extends('layouts.app')
 @section('content')
-<h1 class="max-w-4xl mx-auto mt-5 font-serif text-4xl leading-tight text-center text-teal-500 sm:text-4xl">Bali – Nusa Lembongan</h1>
-<div class="mt-2 font-semibold text-center text-gray-600 text-1xl sm:mt-1">A partir de 1990 € par pers</div>
+<h1 class="max-w-4xl mx-auto mt-5 font-serif text-4xl leading-tight text-center text-teal-500 sm:text-4xl">{{$trip->name}}</h1>
+<div class="mt-2 font-semibold text-center text-gray-600 text-1xl sm:mt-1">A partir de {{$trip->price}} € par pers</div>
 <div x-data="{ open: false }" class="flex flex-wrap mt-4 mb-5 lg:mt-8 lg:mb-12">
 <div class="w-full lg:w-2/3 lg:pr-8">
 <div class="mb-6 overflow-hidden">
 <ul id="lightSlider">
-        <li data-thumb="https://travelmuz.fr/wp-content/uploads/2020/10/147124623_1569506730.jpg">
-            <img src="https://travelmuz.fr/wp-content/uploads/2020/10/147124623_1569506730.jpg" />
-        </li>
-        <li data-thumb="https://travelmuz.fr/wp-content/uploads/2020/10/s5_1568651421.jpg">
-            <img src="https://travelmuz.fr/wp-content/uploads/2020/10/s5_1568651421.jpg" />
-        </li>
-        <li data-thumb="https://travelmuz.fr/wp-content/uploads/2020/10/153698598_1569506735.jpg">
-            <img src="https://travelmuz.fr/wp-content/uploads/2020/10/153698598_1569506735.jpg" />
-        </li>
-        <li data-thumb="https://travelmuz.fr/wp-content/uploads/2020/10/202486096_1569506732.jpg">
-            <img src="https://travelmuz.fr/wp-content/uploads/2020/10/202486096_1569506732.jpg" />
-        </li>
-        <li data-thumb="https://travelmuz.fr/wp-content/uploads/2020/10/kong-kuala-2937763_1280_1569506737.jpg">
-            <img src="https://travelmuz.fr/wp-content/uploads/2020/10/kong-kuala-2937763_1280_1569506737.jpg" />
-        </li>
-        <li data-thumb="https://travelmuz.fr/wp-content/uploads/2020/10/RCKUALA_00123_1569506735.jpeg">
-            <img src="https://travelmuz.fr/wp-content/uploads/2020/10/RCKUALA_00123_1569506735.jpeg" />
-        </li>
-        <li data-thumb="https://travelmuz.fr/wp-content/uploads/2020/10/153860754_1570047861.jpg">
-            <img src="https://travelmuz.fr/wp-content/uploads/2020/10/153860754_1570047861.jpg" />
-        </li>
+    @foreach ($trip->photos as $photo)
 
+    <li data-thumb="{{asset('storage/'.$photo->image)}}">
+        <img src="{{asset('storage/'.$photo->image)}}" />
+    </li>
+
+    @endforeach
     </ul>
 </div>
 <h2 class="mb-5 text-lg font-bold text-gray-800">Détails</h2>
 <div class="pb-6 mb-5 text-sm text-gray-900 border-b border-gray-300 border-dashed lg:pb-0 lg:border-0 lg:mb-5">
-<span class="block pr-3 mb-2 mr-2 text-gray-700 border-gray-300 lg:inline-block lg:border-r">Prix: <span class="font-bold">1990 €</span></span>
-<span class="block pr-3 mb-2 mr-2 text-gray-700 border-gray-300 lg:inline-block lg:border-r">Pays: <span class="font-bold">Indonesie</span></span>
-<span class="block pr-3 mb-2 mr-2 text-gray-700 border-gray-300 lg:inline-block lg:border-r">Pays de depart: <span class="font-bold">France - Paris</span></span>
-<span class="block pr-3 mb-2 mr-2 text-gray-700 border-gray-300 lg:inline-block lg:border-r">Periode: <span class="font-bold">Du 12 Decembre 2020 au 21 janviers 2020 inclus</span></span>
+<span class="block pr-3 mb-2 mr-2 text-gray-700 border-gray-300 lg:inline-block lg:border-r">Prix: <span class="font-bold">{{$trip->price}} €</span></span>
+<span class="block pr-3 mb-2 mr-2 text-gray-700 border-gray-300 lg:inline-block lg:border-r">Pays: <span class="font-bold">{{$trip->country_arrival->name}}</span></span>
+<span class="block pr-3 mb-2 mr-2 text-gray-700 border-gray-300 lg:inline-block lg:border-r">Pays de depart: <span class="font-bold">{{$trip->country_departure->name}}</span></span>
+<span class="block pr-3 mb-2 mr-2 text-gray-700 border-gray-300 lg:inline-block lg:border-r">Periode: <span class="font-bold">{{$trip->periode}}</span></span>
 </div>
 <h3 class="mb-2 text-lg font-bold text-gray-800">Ce qui est inclus</h3>
 <div class="pb-4 mb-5 border-b border-gray-300 border-dashed rounded lg:p-4 lg:border lg:mb-8">
@@ -59,7 +44,7 @@
 </div>
 </div>
 <h2 class="mb-5 text-lg font-bold text-gray-800">Description</h2>
-<div class="font-sans text-base antialiased font-medium leading-loose text-gray-700"><div>Combiné Bali - Nusa Lembongan Prix affiché pour une base de séjour de 12 nuits par personne et prix de départ qui varie selon les hôtels, vos dates de séjour, le nombre de participants et les tarifs pratiqués par nos partenaires. Les itinéraires, hôtels et durée du séjour proposés sont des suggestions. Il est possible de tout modifier à sa guise. Il suffit de le préciser dans votre demande. 5 nuits à Bali en villa avec piscine privée : 4 ou 5* selon votre demande et budget 4 nuits à Nusa Lembongan en villa avec piscine privée 5* ou hôtel classique selon votre demande et budget 3 nuits à Ubud en villa avec piscine privée : 4 ou 5* selon votre demande et budget</div>
+<div class="font-sans text-base antialiased font-medium leading-loose text-gray-700"><div>{{$trip->description}}</div>
 <br />
 </div>
 </div>
