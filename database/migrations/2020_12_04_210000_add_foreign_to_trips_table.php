@@ -16,6 +16,8 @@ class AddForeignToTripsTable extends Migration
         Schema::table('trips', function (Blueprint $table) {
            $table->foreign('country_departure_id')->references('id')->on('countries');
            $table->foreign('country_arrival_id')->references('id')->on('countries');
+           $table->foreign('city_departure_id')->references('id')->on('cities');
+           $table->foreign('city_arrival_id')->references('id')->on('cities');
         });
     }
 

@@ -18,9 +18,13 @@ class CreateTripsTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->decimal('price', 8, 2);
-            $table->unsignedInteger('category_id')->nullable();
-            $table->unsignedInteger('country_departure_id')->nullable();
-            $table->unsignedInteger('country_arrival_id')->nullable();
+            $table->date('departure')->nullable();
+            $table->date('arrival')->nullable();
+            $table->unsignedInteger('category_id');
+            $table->unsignedMediumInteger('country_departure_id');
+            $table->unsignedmediumInteger('country_arrival_id');
+            $table->unsignedMediumInteger('city_departure_id');
+            $table->unsignedmediumInteger('city_arrival_id');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
