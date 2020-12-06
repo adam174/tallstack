@@ -25,22 +25,16 @@
 <h3 class="mb-2 text-lg font-bold text-gray-800">Ce qui est inclus</h3>
 <div class="pb-4 mb-5 border-b border-gray-300 border-dashed rounded lg:p-4 lg:border lg:mb-8">
 <div class="flex flex-wrap items-center text-sm text-gray-800">
-<span class="mb-2 mr-6">
-<svg class="inline-block mr-1 text-teal-400 fill-current" height="17" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M21.652 3.211c-.293-.295-.77-.295-1.061 0L9.41 14.34c-.293.297-.771.297-1.062 0L3.449 9.351c-.145-.148-.335-.221-.526-.222-.193-.001-.389.072-.536.222L.222 11.297c-.144.148-.222.333-.222.526 0 .194.078.397.223.544l4.94 5.184c.292.296.771.776 1.062 1.07l2.124 2.141c.292.293.769.293 1.062 0l14.366-14.34c.293-.294.293-.777 0-1.071l-2.125-2.14z" fill-rule="evenodd" /></svg>
-<span class="whitespace-no-wrap">Petit-déjeuner</span>
-</span>
-<span class="mb-2 mr-6">
-<svg class="inline-block mr-1 text-teal-400 fill-current" height="17" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M21.652 3.211c-.293-.295-.77-.295-1.061 0L9.41 14.34c-.293.297-.771.297-1.062 0L3.449 9.351c-.145-.148-.335-.221-.526-.222-.193-.001-.389.072-.536.222L.222 11.297c-.144.148-.222.333-.222.526 0 .194.078.397.223.544l4.94 5.184c.292.296.771.776 1.062 1.07l2.124 2.141c.292.293.769.293 1.062 0l14.366-14.34c.293-.294.293-.777 0-1.071l-2.125-2.14z" fill-rule="evenodd" /></svg>
-<span class="whitespace-no-wrap">Transferts Privatifs</span>
-</span>
-<span class="mb-2 mr-6">
-<svg class="inline-block mr-1 text-teal-400 fill-current" height="17" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M21.652 3.211c-.293-.295-.77-.295-1.061 0L9.41 14.34c-.293.297-.771.297-1.062 0L3.449 9.351c-.145-.148-.335-.221-.526-.222-.193-.001-.389.072-.536.222L.222 11.297c-.144.148-.222.333-.222.526 0 .194.078.397.223.544l4.94 5.184c.292.296.771.776 1.062 1.07l2.124 2.141c.292.293.769.293 1.062 0l14.366-14.34c.293-.294.293-.777 0-1.071l-2.125-2.14z" fill-rule="evenodd" /></svg>
-<span class="whitespace-no-wrap">Vols Internationaux</span>
-</span>
-<span class="mb-2 mr-6">
-<svg class="inline-block mr-1 text-teal-400 fill-current" height="17" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M21.652 3.211c-.293-.295-.77-.295-1.061 0L9.41 14.34c-.293.297-.771.297-1.062 0L3.449 9.351c-.145-.148-.335-.221-.526-.222-.193-.001-.389.072-.536.222L.222 11.297c-.144.148-.222.333-.222.526 0 .194.078.397.223.544l4.94 5.184c.292.296.771.776 1.062 1.07l2.124 2.141c.292.293.769.293 1.062 0l14.366-14.34c.293-.294.293-.777 0-1.071l-2.125-2.14z" fill-rule="evenodd" /></svg>
-<span class="whitespace-no-wrap">Repas halal</span>
-</span>
+    @forelse ($trip->services as $service)
+    <span class="mb-2 mr-6">
+    <svg class="inline-block mr-1 text-teal-400 fill-current" height="17" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M21.652 3.211c-.293-.295-.77-.295-1.061 0L9.41 14.34c-.293.297-.771.297-1.062 0L3.449 9.351c-.145-.148-.335-.221-.526-.222-.193-.001-.389.072-.536.222L.222 11.297c-.144.148-.222.333-.222.526 0 .194.078.397.223.544l4.94 5.184c.292.296.771.776 1.062 1.07l2.124 2.141c.292.293.769.293 1.062 0l14.366-14.34c.293-.294.293-.777 0-1.071l-2.125-2.14z" fill-rule="evenodd" /></svg>
+    <span class="whitespace-no-wrap">{{$service->name}}</span>
+    </span>
+    @empty
+
+    @endforelse
+
+
 </div>
 </div>
 <h2 class="mb-5 text-lg font-bold text-gray-800">Description</h2>

@@ -33,6 +33,10 @@ class Trip extends Model
 
         return $this->belongsTo('App\Models\Category', 'categoy_id');
     }
+     public function services(){
+
+        return $this->belongsToMany('App\Models\Service');
+    }
 
 
 }
