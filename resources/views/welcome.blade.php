@@ -4,7 +4,7 @@
 @include('partials.header')
     <div class="py-10 bg-white">
   <h3 class="mb-10 text-3xl font-extrabold leading-normal tracking-tight text-center text-gray-900 sm:text-5xl sm:mb-16">
-        <span class="text-indigo-600"> Pourquoi voyager avec Travel ?</span>
+        <span class="text-indigo-600"> Pourquoi voyager avec Oumma Voyages ?</span>
       </h3>
   <div class="flex flex-col justify-between max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8 sm:flex-row">
 
@@ -21,7 +21,7 @@
               </div>
             </div>
             <div class="mt-6 group-hover:text-white">
-              <h4 class="text-lg font-semibold leading-6 text-gray-900">Travel vous garantit</h4>
+              <h4 class="text-lg font-semibold leading-6 text-gray-900">Oumma Voyages vous garantit</h4>
               <p class="mt-2 text-base leading-6 text-gray-500">
                 Séjours testés par notre équipe pour vous offrir la meilleure expérience de voyage possible.
               </p>
@@ -40,9 +40,9 @@
               </div>
             </div>
             <div class="mt-6">
-              <h4 class="text-lg font-semibold leading-6 text-gray-900">Travel vous protège</h4>
+              <h4 class="text-lg font-semibold leading-6 text-gray-900">Oumma Voyages vous protège</h4>
               <p class="mt-2 text-base leading-6 text-gray-500">
-                Pour un séjour en toute sécurité, Travel est agréee par l’APST, le IATA et Atout France.
+                Pour un séjour en toute sécurité, Oumma Voyages est agréee par l’APST, le IATA et Atout France.
               </p>
             </div>
           </div>
@@ -60,7 +60,7 @@
               </div>
             </div>
             <div class="mt-4">
-              <h4 class="text-lg font-semibold leading-6 text-gray-900">Travel vous accueille</h4>
+              <h4 class="text-lg font-semibold leading-6 text-gray-900">Oumma Voyages vous accueille</h4>
               <p class="mt-2 text-base leading-6 text-gray-500">
                 Notre équipe d’agents de voyage experimentés vous accueille au sein de son agence aux portes de Paris.
               </p>
@@ -128,24 +128,26 @@
 
     </div>
 
-    <div class="border">
+     <div class="border">
       <div class="px-5 py-3 text-sm font-medium text-gray-500 uppercase bg-gray-200">
-    Villa avec Piscine privée
+   Moyen Orient
   </div>
-      <img class="w-100" src="https://cf.bstatic.com/images/hotel/max1024x768/216/216542638.jpg" />
+      <img class="w-100" src="https://travelmuz.fr/wp-content/uploads/2019/01/Hotels-club-400x300.jpg" />
+      <hr />
 
-<div class="flex flex-row items-start justify-between p-4">
+      <div class="flex flex-row items-start justify-between p-4">
 
     <div class="text-md">
-      <p class="font-semibold text-gray-900"> 4 nuits </p>
+      <p class="font-semibold text-gray-900">15 jours - 14 nuits</p>
     </div>
 
     <span class="text-xs font-bold text-indigo-600">
-      à partir de € 5 808
+      A partir de 1690 €
     </span>
 
   </div>
       <hr />
+
     </div>
 
   </div>
@@ -186,4 +188,5 @@
     </template>
   </div>
 </div>
+
 @endsection

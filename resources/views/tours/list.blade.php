@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @include('partials.header')
-    <ul class="grid grid-cols-1 gap-8 my-8 sm:my-16 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <ul class="grid grid-cols-1 gap-8 mx-5 my-8 sm:my-16 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         @forelse ($trips as $trip)
 
             <li class="transition-transform duration-200 transform group sm:hover:-translate-y-1">

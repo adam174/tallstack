@@ -30,8 +30,9 @@
     </head>
 
     <body>
+        @include('partials.message')
         @include('partials.nav')
-        
+
         @yield('body')
         @include('partials.footer')
         @yield('js')

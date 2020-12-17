@@ -24,15 +24,15 @@
     @endforeach
     </ul>
 </div>
-<h2 class="mb-5 text-lg font-bold text-gray-800">Détails</h2>
-<div class="pb-6 mb-5 text-sm text-gray-900 border-b border-gray-300 border-dashed lg:pb-0 lg:border-0 lg:mb-5">
+<h2 class="m-5 text-lg font-bold text-gray-800">Détails</h2>
+<div class="pb-6 m-5 text-sm text-gray-900 border-b border-gray-300 border-dashed lg:pb-0 lg:border-0 lg:mb-5">
 <span class="block pr-3 mb-2 mr-2 text-gray-700 border-gray-300 lg:inline-block lg:border-r">Prix: <span class="font-bold">{{$trip->price}} €</span></span>
 <span class="block pr-3 mb-2 mr-2 text-gray-700 border-gray-300 lg:inline-block lg:border-r">Pays: <span class="font-bold"> {{$trip->city_arrival->country->name}} </span></span>
 <span class="block pr-3 mb-2 mr-2 text-gray-700 border-gray-300 lg:inline-block lg:border-r">Pays de depart: <span class="font-bold"> {{$trip->city_departure->country->name}} </span></span>
 <span class="block pr-3 mb-2 mr-2 text-gray-700 border-gray-300 lg:inline-block lg:border-r">Periode: <span class="font-bold">{{$trip->duration}}</span></span>
 </div>
-<h3 class="mb-2 text-lg font-bold text-gray-800">Ce qui est inclus</h3>
-<div class="pb-4 mb-5 border-b border-gray-300 border-dashed rounded lg:p-4 lg:border lg:mb-8">
+<h3 class="m-5 text-lg font-bold text-gray-800">Ce qui est inclus</h3>
+<div class="pb-4 m-5 border-b border-gray-300 border-dashed rounded lg:p-4 lg:border lg:mb-8">
 <div class="flex flex-wrap items-center text-sm text-gray-800">
     @forelse ($trip->services as $service)
     <span class="mb-2 mr-6">
@@ -46,25 +46,15 @@
 
 </div>
 </div>
-<h2 class="mb-5 text-lg font-bold text-gray-800">Description</h2>
-<div class="font-sans text-base antialiased font-medium leading-loose text-gray-700"><div>{{$trip->description}}</div>
+<h2 class="m-5 text-lg font-bold text-gray-800">Description</h2>
+<div class="m-5 font-sans text-base antialiased font-medium leading-loose text-gray-700"><div>{{$trip->description}}</div>
 <br />
 </div>
 </div>
-
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 <!--   form -->
-<div class="fixed inset-0 z-50 flex items-center justify-center w-full overflow-auto lg:w-1/3 lg:relative lg:block lg:overflow-visible" :class="{ 'hidden' : open === false }">
-    <div class="fixed inset-0 z-50 bg-black opacity-75 lg:relative"></div>
-    <div class="relative z-50 p-6 bg-gray-200 rounded shadow-lg lg:sticky lg:top-0 lg:p-8 lg:shadow-none" @click.away="open = false">
+<div class="fixed inset-0 z-40 flex items-center justify-center w-full overflow-auto lg:w-1/3 lg:relative lg:block lg:overflow-visible" :class="{ 'hidden' : open === false }">
+    <div class="fixed inset-0 z-40 bg-black opacity-75 lg:relative"></div>
+    <div class="relative z-40 p-6 bg-gray-200 rounded shadow-lg lg:sticky lg:top-0 lg:p-8 lg:shadow-none" @click.away="open = false">
         <button type="button" aria-label="close modal" class="absolute top-0 right-0 flex items-center px-6 py-2 -mt-10 -mr-6 text-white focus:outline-none" @click="open = false" :class="{ 'hidden': open === false }">
         <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"></path></svg>
         </button>
@@ -98,7 +88,7 @@
                     <input name="departure" type="date" class="block w-full mt-1 form-input" required>
                 </label>
 
-                <label class="flex items-start">
+                <label class="flex items-end">
                     <span class="block m-auto text-gray-700">Retour </span>
                     <input name="arrival" type="date" class="block w-full mt-1 form-input" required>
                 </label>
@@ -106,18 +96,18 @@
 
             <div class="flex mt-4 sm:mt-6">
                <label class="flex items-start">
-                    <span class="block m-auto text-gray-700">Adultes</span>
-                    <input name="adults" value="1" type="number" class="block w-full mt-1 form-input" required>
+
+                    <input name="adults" type="number" class="block mt-1 w-28 form-input" placeholder="Adultes" required>
+               </label>
+
+                <label class="flex items-center">
+
+                    <input name="children" type="number" class="block mt-1 w-44 form-input" placeholder="Enfants:2 à 11 ans" required>
                 </label>
 
                 <label class="flex items-start">
-                    <span class="block m-auto text-gray-700">Enfants (2 à 11 ans) </span>
-                    <input name="children" type="number" class="block w-full mt-1 form-input" required>
-                </label>
 
-                <label class="flex items-start">
-                    <span class="block m-auto text-gray-700">Bébés (-2 ans)</span>
-                    <input name="infant" type="number" class="block w-full mt-1 form-input" required>
+                    <input name="infant" type="number" class="block w-40 mt-1 form-input" placeholder="Bébés:-2 ans" required>
                 </label>
             </div>
             <label class="block mt-4 sm:mt-6">
@@ -135,7 +125,7 @@
 
 
 <div class="fixed bottom-0 left-0 right-0 w-full px-4 py-4" :class="{ 'hidden': open === true }" @click="open = true">
-<button type="button" class="z-50 w-full py-5 text-sm font-bold text-gray-900 uppercase bg-teal-400 rounded shadow-lg focus:outline-none lg:hidden">ENVOYER MA DEMANDE</button>
+<button type="button" class="z-40 w-full py-5 text-sm font-bold text-gray-900 uppercase bg-teal-400 rounded shadow-lg focus:outline-none lg:hidden">ENVOYER MA DEMANDE</button>
 </div>
 </div>
 

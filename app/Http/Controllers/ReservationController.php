@@ -46,7 +46,7 @@ class ReservationController extends Controller
              'adults' => 'required|digits_between:1,2',
              'children' => 'required|digits_between:1,2',
              'infant' => 'required|digits_between:1,2',
-             'message' => 'required|min:3|max:1000',
+             'message' => 'nullable|min:3|max:1000',
          ]);
 
 
@@ -55,7 +55,6 @@ class ReservationController extends Controller
        // dd($request->all());
         Reservation::create($request->all());
 
-        return redirect()->route('home')
-                         ->with('success', 'trip booked successfully.');
+        return back()->with('success', 'Merci! votre réservation est en attente de confirmation');
     }
 }
