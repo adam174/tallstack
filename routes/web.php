@@ -3,6 +3,7 @@
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Auth\Passwords\Confirm;
 use App\Http\Livewire\Auth\Passwords\Email;
@@ -25,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'welcome')->name('home');
 //Route::view('/tours', 'tours.index')->name('tours');
 Route::get('/discovery/', [TripController::class, 'discovery'])->name('discovery');
+Route::get('/hajj-omra/', [TripController::class, 'omra'])->name('omra');
 Route::get('/tours/list/{id}', [TripController::class, 'list'])->name('list');
 Route::get('/tours/details/{id}', [TripController::class, 'show'])->name('tours.details');
 //Route::view('/tours/list', 'tours.list')->name('list');
@@ -66,3 +68,6 @@ Route::middleware('auth')->group(function () {
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+
+Route::post('/reserve/{id}', [ReservationController::class,'store'])->name('reservation.store');

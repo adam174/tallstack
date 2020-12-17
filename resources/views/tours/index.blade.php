@@ -1,5 +1,7 @@
 @extends('layouts.app')
+
 @section('content')
+@include('partials.header')
 <div class="flex flex-wrap -mx-2 overflow-hidden sm:-mx-1 md:-mx-1 lg:-mx-1 xl:-mx-1">
  @foreach ($categories as $category)
 

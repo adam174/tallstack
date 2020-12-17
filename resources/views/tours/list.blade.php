@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@include('partials.header')
     <ul class="grid grid-cols-1 gap-8 my-8 sm:my-16 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         @forelse ($trips as $trip)
 
@@ -10,11 +11,11 @@
                     </div>
                     <div class="relative px-4 -mt-12 text-left">
                         <div class="px-4 py-3 transition duration-200 bg-white rounded-lg shadow-md sm:group-hover:shadow-2xl">
-                            <div class="text-xs font-semibold text-gray-600"> <span class="uppercase">{{$trip->city_arrival->name}} </span> <span class="mx-2 text-sm text-gray-400"> • </span> {{$trip->country_arrival->name}},{{$trip->city_arrival->name}},{{$trip->name}}</div>
+                            <div class="text-xs font-semibold text-gray-600"> <span class="uppercase">{{$trip->city_arrival->name}} </span> <span class="mx-2 text-sm text-gray-400"> • </span> {{$trip->city_arrival->country->name}},{{$trip->city_arrival->name}},{{$trip->name}}</div>
                         <h4 class="my-1 text-sm font-bold leading-tight text-gray-900 truncate">{{$trip->name}}</h4>
                             <span class="text-sm font-semibold text-teal-500">
                                 A partir de {{$trip->price}} € par pers
-                                <span class="mx-2 text-gray-400"> • </span><span class="inline-block text-sm font-semibold leading-none text-orange-500">{{$trip->periode}}</span>
+                                <span class="mx-2 text-gray-400"> • </span><span class="inline-block text-sm font-semibold leading-none text-orange-500">{{$trip->duration}}</span>
                             </span>
                         </div>
                     </div>

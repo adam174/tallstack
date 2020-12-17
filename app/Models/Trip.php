@@ -38,5 +38,9 @@ class Trip extends Model
         return $this->belongsToMany('App\Models\Service');
     }
 
+     public function reservations(){
+
+        return $this->hasMany('App\Models\Reservation');
+    }
 
 }

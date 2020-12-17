@@ -1,0 +1,60 @@
+header {
+  background-color: #dae1fe;
+  position: relative;
+}
+
+header.radial {
+  background-image: radial-gradient(circle 644px at center, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+header .content {
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+header .content .head {
+  font-weight: 800;
+  font-family: objektiv-mk1, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #000f89;
+  margin-bottom: 2.5rem;
+  font-size: 2.25rem;
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.25;
+}
+
+@media (min-width: 1024px) {
+  header .content .head {
+    font-size: 3rem;
+  }
+}
+
+header .content .sub {
+  font-size: 1.5rem;
+  color: #4766ff;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.25;
+}
+
+@media (min-width: 1024px) {
+  header .content {
+    padding-top: 12rem;
+    padding-bottom: 6rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+#slide-1{-webkit-animation:slideShow 24s linear infinite;animation:slideShow 24s linear infinite;opacity:1}
+#slide-2{-webkit-animation:slideShow 24s linear 6s infinite;animation:slideShow 24s linear 6s infinite;opacity:0;-webkit-animation-delay:6s;animation-delay:6s}
+#slide-3{-webkit-animation:slideShow 24s linear 12s infinite;animation:slideShow 24s linear 12s infinite;opacity:0;-webkit-animation-delay:12s;animation-delay:12s}
+#slide-4{-webkit-animation:slideShow 24s linear 18s infinite;animation:slideShow 24s linear 18s infinite;opacity:0;-webkit-animation-delay:18s;animation-delay:18s}@-webkit-keyframes slideShow{to{opacity:0;-webkit-transform:scale(1);transform:scale(1)}}@keyframes slideShow{0%{opacity:0;-webkit-transform:scale(1);transform:scale(1)}5%,25%{opacity:1}30%{opacity:0;-webkit-transform:scale(1.1);transform:scale(1.1)}to{opacity:0;-webkit-transform:scale(1);transform:scale(1)}}@-webkit-keyframes slide{to{-webkit-transform:translate3d(-3888px,0,0);transform:translate3d(-3888px,0,0)}}@keyframes slide{0%{-webkit-transform:translateZ(0);transform:translateZ(0)}to{-webkit-transform:translate3d(-3888px,0,0);transform:translate3d(-3888px,0,0)}}

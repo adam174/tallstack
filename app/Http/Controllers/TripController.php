@@ -22,6 +22,17 @@ class TripController extends Controller
 
      /**
      * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function omra()
+    {
+        $categories = Category::where('parent_id',2)->get();
+       // dd($categories);
+      return view('tours.index',compact('categories'));
+    }
+     /**
+     * Display a listing of the resource.
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

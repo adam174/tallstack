@@ -31,7 +31,7 @@
 
     <body>
         @include('partials.nav')
-       @include('partials.header')
+        
         @yield('body')
         @include('partials.footer')
         @yield('js')

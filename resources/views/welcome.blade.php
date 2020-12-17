@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+@include('partials.header')
     <div class="py-10 bg-white">
   <h3 class="mb-10 text-3xl font-extrabold leading-normal tracking-tight text-center text-gray-900 sm:text-5xl sm:mb-16">
         <span class="text-indigo-600"> Pourquoi voyager avec Travel ?</span>
