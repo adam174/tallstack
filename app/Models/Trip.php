@@ -9,6 +9,7 @@ class Trip extends Model
 {
     use HasFactory;
 
+
      public function photos(){
 
         return $this->hasMany('App\Models\Photo', 'trip_id');
@@ -31,7 +32,7 @@ class Trip extends Model
     }
     public function category(){
 
-        return $this->belongsTo('App\Models\Category', 'categoy_id');
+        return $this->belongsTo('App\Models\Category');
     }
      public function services(){
 

@@ -72,7 +72,7 @@ class TripController extends Controller
      */
     public function show($id)
     {
-       $trip = Trip::with('services')->find($id);
+       $trip = Trip::with('services')->findOrFail($id);
        return view('tours.details',compact('trip'));
     }
 

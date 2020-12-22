@@ -27,7 +27,11 @@ class Reservation extends Model
 
     public function trip(){
 
-        return $this->belongsTo('App\Models\Trip');
+        return $this->belongsTo('App\Models\Trip')->with('category');
+    }
+    public function user(){
+
+        return $this->belongsTo('App\Models\User');
     }
 
 

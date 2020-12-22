@@ -15,13 +15,13 @@
 <div class="w-full lg:w-2/3 lg:pr-8">
 <div class="mb-6 overflow-hidden">
 <ul id="lightSlider">
-    @foreach ($trip->photos as $photo)
+    @forelse ($trip->photos as $photo)
 
     <li data-thumb="{{asset('storage/'.$photo->image)}}">
         <img src="{{asset('storage/'.$photo->image)}}" />
     </li>
-
-    @endforeach
+    @empty
+    @endforelse
     </ul>
 </div>
 <h2 class="m-5 text-lg font-bold text-gray-800">Détails</h2>

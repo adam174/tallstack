@@ -3,7 +3,7 @@
 @section('content')
 @include('partials.header')
 <div class="flex flex-wrap -mx-2 overflow-hidden sm:-mx-1 md:-mx-1 lg:-mx-1 xl:-mx-1">
- @foreach ($categories as $category)
+ @forelse ($categories as $category)
 
  <div class="w-full px-2 my-2 overflow-hidden sm:my-1 sm:px-1 md:my-1 md:px-1 md:w-1/2 lg:my-1 lg:px-1 lg:w-1/3 xl:my-1 xl:px-1 xl:w-1/4">
     <!-- Column Content -->
@@ -25,8 +25,8 @@
     </div>
 </div>
 </div>
-
-@endforeach
+@empty
+@endforelse
 
 </div>
 

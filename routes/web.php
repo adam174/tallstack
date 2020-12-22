@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\TripController;
+use App\Http\Controllers\Voyager\VoyagerTripController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\Voyager\VoyagerCategoryController;
 use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Auth\Passwords\Confirm;
 use App\Http\Livewire\Auth\Passwords\Email;
@@ -11,7 +13,6 @@ use App\Http\Livewire\Auth\Passwords\Reset;
 use App\Http\Livewire\Auth\Register;
 use App\Http\Livewire\Auth\Verify;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -66,6 +67,10 @@ Route::middleware('auth')->group(function () {
 
 
 Route::group(['prefix' => 'admin'], function () {
+    Route::delete('/trip/photos/{id}', [VoyagerTripController::class,'destroyPhoto'])->name('destroyPhoto');
+    Route::post('/trip/photos/{id}', [VoyagerTripController::class,'storePhoto'])->name('storePhoto');
+    Route::put('/trip/services/{id}', [VoyagerTripController::class,'tripServices'])->name('trip.services');
+    Route::patch('/category/photo/{id}', [VoyagerCategoryController::class,'categoryUpdatePhoto'])->name('category.update');
     Voyager::routes();
 });
 
