@@ -25,9 +25,9 @@ class ReservationController extends Controller
                     $request->request->add(['mobile' => auth()->user()->mobile,'name' => auth()->user()->name,'email' => auth()->user()->email,'user_id' => auth()->user()->id]);
                 }else{
                     $request->validate([
-                        'name' => 'nullable|string|min:3|max:50',
-                        'email' => 'nullable|email|unique:users',
-                        'mobile' =>'required|string'
+                        'name' => 'required|string|min:3|max:50',
+                        'email' => 'required|email|unique:users',
+                        'mobile' =>'required|string|unique:users'
                         ]);
 
                         $user = User::insertGetId(

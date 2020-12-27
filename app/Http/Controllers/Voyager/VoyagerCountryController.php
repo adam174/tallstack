@@ -30,5 +30,13 @@ class VoyagerCountryController extends \TCG\Voyager\Http\Controllers\VoyagerBase
         return Voyager::view(('admin.country.browse'), compact('countries'));
     }
 
+    public function create(Request $request)
+    {
+
+
+       // dd($reservation->trip);
+
+        return Voyager::view(('admin.country.add'));
+    }
 
 }

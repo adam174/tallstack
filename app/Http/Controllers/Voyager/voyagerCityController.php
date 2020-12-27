@@ -25,10 +25,20 @@ class VoyagerCityController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCon
     {
 
        $cities = City::get();
-        
+
        // dd($reservation->trip);
 
         return Voyager::view(('admin.city.browse'), compact('cities'));
+    }
+
+    public function create(Request $request)
+    {
+
+       $countries = Country::get();
+
+       // dd($reservation->trip);
+
+        return Voyager::view(('admin.city.add'), compact('countries'));
     }
 
 

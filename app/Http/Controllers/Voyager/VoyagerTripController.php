@@ -83,6 +83,6 @@ class VoyagerTripController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCon
 
        // dd($path);
 
-        return redirect()->back()->with('success','Enregistré avec succès');
+        return redirect()->back()->with('success','image Enregistré avec succès');
     }
 }

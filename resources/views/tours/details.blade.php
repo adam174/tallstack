@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
 <div class="relative flex items-center justify-center h-48 overflow-hidden bg-gray-600 sm:h-96">
-<figure id="slide-1" class="absolute top-0 left-0 w-full h-full bg-center bg-cover" style="background-image:url(https://cdn.pixabay.com/photo/2020/09/10/13/28/crowd-5560458_1280.jpg)"></figure>
-<figure id="slide-2" class="absolute top-0 left-0 w-full h-full bg-center bg-cover" style="background-image:url(https://cdn.pixabay.com/photo/2017/04/10/09/05/makkah-2217845_1280.jpg)"></figure>
-<figure id="slide-3" class="absolute top-0 left-0 w-full h-full bg-center bg-cover" style="background-image:url(https://cdn.pixabay.com/photo/2014/07/30/12/55/mosque-405239_1280.jpg)"></figure>
-<figure id="slide-4" class="absolute top-0 left-0 w-full h-full bg-center bg-cover" style="background-image:url(https://cdn.pixabay.com/photo/2017/04/10/09/06/house-of-allah-2217859_1280.jpg)"></figure>
-<div class="absolute w-full h-full bg-gray-900 opacity-50"></div>
+        <figure id="slide-1" class="absolute top-0 left-0 w-full h-full bg-center bg-cover" style="background-image:url(https://cdn.pixabay.com/photo/2020/09/10/13/28/crowd-5560458_1280.jpg)"></figure>
+        <figure id="slide-2" class="absolute top-0 left-0 w-full h-full bg-center bg-cover" style="background-image:url(https://cdn.pixabay.com/photo/2017/04/10/09/05/makkah-2217845_1280.jpg)"></figure>
+        <figure id="slide-3" class="absolute top-0 left-0 w-full h-full bg-center bg-cover" style="background-image:url(https://cdn.pixabay.com/photo/2014/07/30/12/55/mosque-405239_1280.jpg)"></figure>
+        <figure id="slide-4" class="absolute top-0 left-0 w-full h-full bg-center bg-cover" style="background-image:url(https://cdn.pixabay.com/photo/2017/04/10/09/06/house-of-allah-2217859_1280.jpg)"></figure>
+        <div class="absolute w-full h-full bg-gray-900 opacity-50"></div>
 <h1 class="absolute z-10 font-serif text-2xl font-bold leading-tight text-center text-white shadow-lg sm:text-4xl">lieux d'exceptions et un service unique.</h1>
 </div>
 <!-- test -->
@@ -96,25 +96,35 @@
 
             <div class="flex mt-4 sm:mt-6">
                <label class="flex items-start">
-
-                    <input name="adults" type="number" class="block mt-1 w-28 form-input" placeholder="Adultes" required>
+                 <select name="adults" class="block w-40 mt-1 form-input">
+                     <option class="py-4" selected>Adulte(s) > 11 ans</option>
+                           @for ($i = 0; $i < 10; $i++)
+                           <option class="py-4" value="{{$i}}">{{$i}} </option>
+                           @endfor
+                 </select>
                </label>
 
                 <label class="flex items-center">
-
-                    <input name="children" type="number" class="block mt-1 w-44 form-input" placeholder="Enfants:2 à 11 ans" required>
+                    <select name="children" class="block w-40 mt-1 form-input">
+                        <option class="py-4" selected>Enfants: 2 à 11 ans</option>
+                           @for ($i = 0; $i < 10; $i++)
+                           <option class="py-4" value="{{$i}}">{{$i}}</option>
+                           @endfor
+                    </select>
                 </label>
 
                 <label class="flex items-start">
-
-                    <input name="infant" type="number" class="block w-40 mt-1 form-input" placeholder="Bébés:-2 ans" required>
+                    <select name="infant" class="block w-40 mt-1 form-input">
+                           <option class="py-4" selected>Bébés: < 2 ans</option>
+                           @for ($i = 0; $i < 10; $i++)
+                           <option class="py-4" value="{{$i}}">{{$i}}</option>
+                           @endfor
+                    </select>
                 </label>
             </div>
             <label class="block mt-4 sm:mt-6">
                 <span class="block mb-1 text-gray-700">Message (facultatif )</span>
-                <textarea name="message" rows="4" cols="50" class="block w-full mt-1 border border-green-600">
-
-                </textarea>
+                <textarea name="message" rows="4" cols="50" class="block w-full mt-1 border border-green-600"></textarea>
             </label>
             <button id="js-submit" type="submit" class="w-full px-16 py-3 mt-4 font-semibold text-teal-900 transition-colors duration-100 bg-teal-300 border border-transparent rounded focus:outline-none hover:bg-teal-200 hover:border-teal-300 sm:mt-6">ENVOYER MA DEMANDE</button>
         </form>

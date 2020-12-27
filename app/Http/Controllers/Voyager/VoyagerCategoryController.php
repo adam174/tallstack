@@ -52,7 +52,14 @@ class VoyagerCategoryController extends \TCG\Voyager\Http\Controllers\VoyagerBas
         return redirect()->back()->with('success','Enregistré avec succès');
     }
 
+        public function create(Request $request)
+            {
 
+              $parents = category::has('children')->get();
+            // dd($reservation->trip);
+
+                return Voyager::view(('admin.category.add'), compact('parents'));
+            }
 
 
 }

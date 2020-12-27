@@ -38,7 +38,7 @@ class TripController extends Controller
      */
     public function list($id)
     {
-        $trips = Trip::with('photos')->where('category_id',$id)->get();
+        $trips = Trip::has('photos')->where('category_id',$id)->get();
        // dd($trips[0]->photos[0]->image);
       return view('tours.list',compact('trips'));
     }
@@ -72,7 +72,7 @@ class TripController extends Controller
      */
     public function show($id)
     {
-       $trip = Trip::with('services')->findOrFail($id);
+       $trip = Trip::findOrFail($id);
        return view('tours.details',compact('trip'));
     }
 
