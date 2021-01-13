@@ -2,7 +2,13 @@
 
 @section('body')
 <!-- component -->
-<h3 class="text-3xl font-medium text-gray-700">Les Villes</h3>
+<div class="flex justify-between mb-9">
+   <h3 class="text-3xl font-medium text-gray-700">Les villes</h3>
+    <a class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-green-500 uppercase transition bg-transparent border-2 border-green-500 rounded ripple hover:bg-green-100 focus:outline-none"
+        href="{{route('voyager.cities.create')}}">
+            Créer
+          </a>
+</div>
 <div>
       <table class="min-w-full table-auto">
         <thead class="justify-between">
