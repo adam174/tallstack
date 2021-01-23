@@ -21,7 +21,7 @@
           <a href="{{ route('home') }}" class="block py-2 text-gray-100 uppercase ">Acceuil</a>
           <a href="{{ route('discovery') }}" class="block py-2 text-gray-300 uppercase hover:text-gray-100 ">SÉJOURS</a>
           <a href="{{ route('omra') }}" class="block py-2 text-gray-300 uppercase hover:text-gray-100 ">HAJJ / OMRA</a>
-          <a href="#" class="block py-2 text-gray-300 uppercase hover:text-gray-100 ">Contactez-nous</a>
+          <a href="#contact" class="block py-2 text-gray-300 uppercase hover:text-gray-100 ">Contactez-nous</a>
             @guest
 
             <div class="flex items-center justify-between pt-4">
@@ -65,7 +65,7 @@
               href="{{ route('omra') }}"
               class="inline-block py-1 mr-6 text-gray-300 uppercase md:py-4 hover:text-gray-100 ">HAJJ / OMRA</a>
             <a
-              href="#"
+              href="#contact"
               class="inline-block py-1 text-gray-300 uppercase md:py-4 hover:text-gray-100 ">Contactez-nous</a>
           </div>
         </div>
