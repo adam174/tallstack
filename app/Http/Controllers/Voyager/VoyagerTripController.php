@@ -71,14 +71,20 @@ class VoyagerTripController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCon
     public function storePhoto(Request $request, $id)
     {
        // dd($request->file);
-            $request->validate([
-                 'file' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
-             ]);
-           $fileName = time().'_'.$request->file->getClientOriginalName();
-           $filePath = $request->file('file')->storeAs('uploads', $fileName, 'public');
-           $request->request->add(['image' => $filePath]);
-           $request->request->add(['trip_id' => $id]);
-          Photo::create($request->all());
+       $request->validate([
+            'file' => 'required',
+            'file.*' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+       foreach ($request->file('file') as $file) {
+           # code...
+          $fileName = time().rand(0, 1000).'_'.$file->getClientOriginalName();
+          $filePath = $file->storeAs('uploads', $fileName, 'public');
+         Photo::create([
+             'image' => $filePath,
+             'trip_id' => $id
+         ]);
+
+       }
 
 
        // dd($path);
