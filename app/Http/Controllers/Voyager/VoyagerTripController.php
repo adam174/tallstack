@@ -92,10 +92,10 @@ class VoyagerTripController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCon
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
-        $trip = Trip::FindOrFail($id);
-        $trip->photos->delete();
+        $trip = Trip::with('photos')->FindOrFail($id);
+        $trip->photos()->delete();
         $trip->delete();
 
         return redirect()->back()->with('success','la photo à été suprimé avec succès');
