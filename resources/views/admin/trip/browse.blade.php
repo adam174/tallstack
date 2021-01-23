@@ -80,7 +80,7 @@
               </button>
             </td>
             <td class="px-3 py-2 text-center">
-                <form action="{{route('voyager.trips.destroy',$trip->id)}}" id="delete_form" method="POST">
+                <form action="{{route('voyager.trips.destroy',$trip)}}" id="delete_form" method="POST">
                         {{ method_field('DELETE') }}
                         {{ csrf_field() }}
 

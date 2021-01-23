@@ -85,4 +85,18 @@ class VoyagerTripController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCon
 
         return redirect()->back()->with('success','image Enregistré avec succès');
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Trip $trip)
+    {
+        $trip->photos->delete();
+        $trip->delete();
+
+        return redirect()->back()->with('success','la photo à été suprimé avec succès');
+    }
 }
