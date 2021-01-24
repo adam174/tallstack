@@ -47,7 +47,7 @@
 </div>
 </div>
 <h2 class="m-5 text-lg font-bold text-gray-800">Description</h2>
-<div class="m-5 font-sans text-base antialiased font-medium leading-loose text-gray-700"><div>{{$trip->description}}</div>
+<div class="m-5 font-sans text-base antialiased font-medium leading-loose text-gray-700"><div>{!! html_entity_decode($trip->description) !!}</div>
 <br />
 </div>
 </div>

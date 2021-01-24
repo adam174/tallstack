@@ -24,7 +24,7 @@
 
         <!-- Scripts -->
         <script src="{{ url(mix('js/app.js')) }}" defer></script>
-
+        <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
@@ -46,5 +46,12 @@
         </div>
 
         @livewireScripts
+        <script>
+        ClassicEditor
+        .create( document.querySelector( '#description' ) )
+        .catch( error => {
+                        console.error( error );
+            } );
+        </script>
     </body>
 </html>
