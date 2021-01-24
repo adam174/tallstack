@@ -52,7 +52,7 @@
 </div>
 </div>
 <!--   form -->
-<div class="fixed inset-0 z-40 flex items-center justify-center w-full overflow-auto lg:w-1/3 lg:relative lg:block lg:overflow-visible" :class="{ 'hidden' : open === false }">
+<div class="fixed inset-0 z-40 justify-center w-full overflow-auto md:items-center md:flex max-w-prose lg:w-1/3 lg:relative lg:block lg:overflow-visible" :class="{ 'hidden' : open === false }">
     <div class="fixed inset-0 z-40 bg-black opacity-75 lg:relative"></div>
     <div class="relative z-40 p-6 bg-gray-200 rounded shadow-lg lg:sticky lg:top-0 lg:p-8 lg:shadow-none" @click.away="open = false">
         <button type="button" aria-label="close modal" class="absolute top-0 right-0 flex items-center px-6 py-2 -mt-10 -mr-6 text-white focus:outline-none" @click="open = false" :class="{ 'hidden': open === false }">
@@ -82,7 +82,7 @@
 
             @endguest
 
-            <div class="flex mt-4 sm:mt-6">
+            <div class="mt-4 md:flex sm:mt-6">
                 <label class="flex items-start">
                     <span class="block m-auto text-gray-700">Aller</span>
                     <input name="departure" type="date" class="block w-full mt-1 form-input" required>
@@ -94,9 +94,9 @@
                 </label>
             </div>
 
-            <div class="flex mt-4 sm:mt-6">
+            <div class="mt-4 md:flex sm:mt-6">
                <label class="flex items-start">
-                 <select name="adults" class="block w-40 mt-1 form-input">
+                 <select name="adults" class="block w-full mt-1 form-input">
                      <option class="py-4" selected>Adulte(s) > 11 ans</option>
                            @for ($i = 0; $i < 10; $i++)
                            <option class="py-4" value="{{$i}}">{{$i}} </option>
@@ -105,7 +105,7 @@
                </label>
 
                 <label class="flex items-center">
-                    <select name="children" class="block w-40 mt-1 form-input">
+                    <select name="children" class="block w-full mt-1 form-input">
                         <option class="py-4" selected>Enfants: 2 à 11 ans</option>
                            @for ($i = 0; $i < 10; $i++)
                            <option class="py-4" value="{{$i}}">{{$i}}</option>
@@ -114,7 +114,7 @@
                 </label>
 
                 <label class="flex items-start">
-                    <select name="infant" class="block w-40 mt-1 form-input">
+                    <select name="infant" class="block w-full mt-1 form-input">
                            <option class="py-4" selected>Bébés: < 2 ans</option>
                            @for ($i = 0; $i < 10; $i++)
                            <option class="py-4" value="{{$i}}">{{$i}}</option>
