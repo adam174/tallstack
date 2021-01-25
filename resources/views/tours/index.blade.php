@@ -9,7 +9,7 @@
     <!-- Column Content -->
     <div class="p-2 border box">
         <div class="relative pb-5/6">
-            <a href="{{ route('list',$category->id) }}"> <img class="absolute inset-0 object-cover w-full h-full rounded-lg shadow-md" src="{{asset('storage/'.$category->image)}}" alt=""></a>
+            <a href="{{ route('list',[$category->id,$category->slug]) }}"> <img class="absolute inset-0 object-cover w-full h-full rounded-lg shadow-md" src="{{asset('storage/'.$category->image)}}" alt=""></a>
         </div>
         <div class="relative px-4 -mt-16">
             <div class="px-4 py-4 bg-white rounded-lg shadow-lg">

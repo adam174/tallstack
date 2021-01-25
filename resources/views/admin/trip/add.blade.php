@@ -43,7 +43,7 @@
                 </label>
                 <div class="flex mt-1 rounded-md shadow-sm">
 
-                  <input type="text" name="name" id="company_website" class="flex-1 block w-full border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
+                  <input type="text" name="name" id="company_website" class="flex-1 block w-full border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm" required>
                 </div>
               </div>
             </div>
@@ -52,8 +52,8 @@
               <label for="description" class="block text-sm font-medium text-gray-700">
                 description
               </label>
-              <div class="mt-1">
-                <textarea id="description" name="description" rows="10" class="block w-full mt-1 border border-indigo-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
+              <div class="h-full mt-1">
+                <textarea id="description" name="description" class="block w-full mt-1 border border-indigo-700 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
               </div>
 
             </div>

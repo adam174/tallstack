@@ -40,7 +40,7 @@ class ReservationController extends Controller
                     $request->request->add(['user_id' => $user ]);
                  }
          $request->validate([
-             'trip_id' => 'required|Numeric',
+             'trip_id' => 'required|Numeric|exists:trips,id',
              'departure' => 'required|date',
              'arrival' => 'required|date',
              'adults' => 'required|digits_between:1,2',

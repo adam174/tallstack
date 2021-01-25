@@ -4,12 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Trip extends Model
 {
+    protected $guarded = [];
     use HasFactory;
 
-
+    public function getSlugAttribute(): string
+        {
+            return Str::slug($this->name,'-');
+        }
      public function photos(){
 
         return $this->hasMany('App\Models\Photo', 'trip_id');

@@ -13,9 +13,25 @@ class TripController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function index()
+    {
+        $trips = cache()->remember('home',60*60*24, function(){
+            return Trip::has('photos')->inRandomOrder()->limit(3)->get();
+        });
+
+       // dd($trips);
+
+      return view('welcome',compact('trips'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function discovery()
     {
-        $categories = Category::where('parent_id',1)->get();
+        $categories = Category::has('trips')->where('parent_id',1)->get();
        // dd($categories);
       return view('tours.index',compact('categories'));
     }
@@ -27,7 +43,7 @@ class TripController extends Controller
      */
     public function omra()
     {
-        $categories = Category::where('parent_id',2)->get();
+        $categories = Category::has('trips')->where('parent_id',2)->get();
        // dd($categories);
       return view('tours.index',compact('categories'));
     }

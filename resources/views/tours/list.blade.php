@@ -5,7 +5,7 @@
         @forelse ($trips as $trip)
 
             <li class="transition-transform duration-200 transform group sm:hover:-translate-y-1">
-                <a href="{{ route('tours.details',$trip->id) }}">
+                <a href="{{ route('tours.details',[$trip->id,$trip->slug]) }}">
                     <div class="relative flex-shrink-0">
                         <img loading="lazy" src="{{asset('storage/'.$trip->photos[0]->image)}}" srcset="{{asset('storage/'.$trip->photos[0]->image)}} 1x, {{asset('storage/'.$trip->photos[0]->image)}} 2x" width="352" height="256" class="object-cover w-full h-64 transition duration-200 rounded-lg shadow-md group-hover:shadow-2xl" alt="Five-Bedroom Apartment with Terrace and Balcony for Sale in Belém, Lisboa">
                     </div>

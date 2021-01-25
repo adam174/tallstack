@@ -30,6 +30,7 @@
 <span class="block pr-3 mb-2 mr-2 text-gray-700 border-gray-300 lg:inline-block lg:border-r">Pays: <span class="font-bold"> {{$trip->city_arrival->country->name}} </span></span>
 <span class="block pr-3 mb-2 mr-2 text-gray-700 border-gray-300 lg:inline-block lg:border-r">Pays de depart: <span class="font-bold"> {{$trip->city_departure->country->name}} </span></span>
 <span class="block pr-3 mb-2 mr-2 text-gray-700 border-gray-300 lg:inline-block lg:border-r">Periode: <span class="font-bold">{{$trip->duration}}</span></span>
+<span class="block pr-3 mb-2 mr-2 text-gray-700 border-gray-300 lg:inline-block lg:border-r">Date: <span class="font-bold">{{$trip->departure ?? 'Flexible'}} => {{$trip->arrival ?? ''}}</span></span>
 </div>
 <h3 class="m-5 text-lg font-bold text-gray-800">Ce qui est inclus</h3>
 <div class="pb-4 m-5 border-b border-gray-300 border-dashed rounded lg:p-4 lg:border lg:mb-8">

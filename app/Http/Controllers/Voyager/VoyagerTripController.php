@@ -9,6 +9,7 @@ use App\Models\Service;
 use App\Models\Trip;
 use Illuminate\Http\Request;
 use TCG\Voyager\Facades\Voyager;
+use Illuminate\Support\Str;
 
 
 class VoyagerTripController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
@@ -28,6 +29,39 @@ class VoyagerTripController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCon
         $trip = Trip::findOrFail($id);
         $trip->services()->sync($request->services);
         return redirect()->back()->with('success','Enregistré avec succès');
+    }
+
+     /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $request->validate([
+                 'name' => 'required|string',
+                 'description' => 'required|string',
+                 'price' => 'regex:/^\d*(\.\d{2})?$/',
+                 'departure' => 'nullable|date',
+                 'arrival' => 'nullable|date',
+                 'category_id' => 'required|exists:categories,id',
+                 'city_departure_id' => 'required|exists:cities,id',
+                 'city_arrival_id' => 'required|exists:cities,id',
+                 'duration' => 'required|string'
+             ]);
+        Trip::create([
+                        'name' => $request->name,
+                        'description' => $request->description,
+                        'price' => $request->price,
+                        'departure' => $request->departure,
+                        'arrival' => $request->arrival,
+                        'category_id' => $request->category_id,
+                        'city_departure_id' => $request->city_departure_id,
+                        'city_arrival_id' => $request->city_arrival_id,
+                        'duration' => $request->duration,
+        ]);
+        return redirect()->route('voyager.trips.index')->with('success','Tour Enregistré avec succès');
     }
    public function show(Request $request, $id)
     {
