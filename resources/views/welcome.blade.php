@@ -96,20 +96,20 @@
         <div class="grid col-gap-5 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
             @forelse ($trips as $trip)
             <div class="border">
-                <div class="px-5 py-3 text-sm font-medium text-gray-500 uppercase bg-gray-200">
+                <div class="py-3 text-sm font-medium text-center text-gray-500 uppercase bg-gray-200">
                     {{$trip->category->name}}
                 </div>
-                <img class="w-100"
-                    src="https://travelmuz.fr/wp-content/uploads/2018/08/travelmuz-_istanbul-_turquie-_mosquee-_bleue_1571229861-400x300.jpg" />
+                <img class="object-cover w-full rounded-lg shadow-md h-4/5 "
+                    src="{{asset('storage/'.$trip->photos[0]->image)}}" />
 
-                <div class="flex flex-row items-start justify-between p-4">
+                <div class="flex justify-between">
 
                     <div class="text-md">
                         <p class="font-semibold text-gray-900">{{$trip->duration}}</p>
                     </div>
 
                     <span class="text-xs font-bold text-indigo-600">
-                        A partir de {{$trip->price}} € par pers
+                        {{$trip->price}} € par pers
                     </span>
 
                 </div>
