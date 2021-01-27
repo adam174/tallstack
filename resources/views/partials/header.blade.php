@@ -1,6 +1,6 @@
  <header class="radial">
         <div class="bg-no-repeat content" style="background-image:url(https://skylight.com.bd/wp-content/uploads/2019/02/Kaaba-4.jpg);background-size:1600px 575px;background-position:center buttom;">
-            <div class="head">Voyagez avec <br> Oumma Voyages <br> Selon <br> vos principes</div>
+            <div class="head"> Oumma Voyages <br>Voyagez avec Selon <br> vos principes</div>
             <div class="sub"> .</div>
         </div>
 

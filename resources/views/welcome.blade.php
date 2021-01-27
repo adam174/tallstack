@@ -11,11 +11,11 @@
 
             <div class="mx-auto">
                 <ul class="md:grid md:grid-cols-3 md:col-gap-10 md:row-gap-10">
-                    <li class="p-5 py-16 text-center transition duration-500 ease-in-out border group hover:shadow-xl">
+                    <li class="p-5 py-16 text-center transition duration-500 ease-in-out border group hover:shadow-xl hover:border-gray-500">
                         <a href="#">
                             <div class="flex flex-col items-center">
                                 <div class="flex-shrink-0">
-                                    <div class="flex items-center justify-center text-indigo-500 group-hover:text-white">
+                                    <div class="flex items-center justify-center text-indigo-500 group-hover:text-indigo-600">
                                         <svg class="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -34,11 +34,11 @@
                         </a>
                     </li>
                     <li
-                        class="p-5 py-16 mt-10 text-center transition duration-500 ease-in-out border md:mt-0 hover:shadow-xl">
+                        class="p-5 py-16 mt-10 text-center transition duration-500 ease-in-out border md:mt-0 hover:shadow-xl hover:border-gray-500">
                         <a href="#">
                             <div class="flex flex-col items-center">
                                 <div class="flex-shrink-0">
-                                    <div class="flex items-center justify-center text-indigo-500">
+                                    <div class="flex items-center justify-center text-indigo-500 hover:text-indigo-600">
                                         <svg class="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
@@ -57,11 +57,11 @@
                         </a>
                     </li>
 
-                    <li class="p-5 py-16 mt-10 text-center border md:mt-0 hover:shadow-lg">
+                    <li class="p-5 py-16 mt-10 text-center border md:mt-0 hover:shadow-lg hover:border-gray-500">
                         <a href="#">
                             <div class="flex flex-col items-center">
                                 <div class="flex-shrink-0">
-                                    <div class="flex items-center justify-center text-indigo-500">
+                                    <div class="flex items-center justify-center text-indigo-500 hover:text-indigo-600">
                                         <svg class="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
@@ -85,7 +85,7 @@
 
         </div>
     </div>
-    <!--  pricing section   -->
+    <!--  details section   -->
     <div class="max-w-screen-lg py-20 mx-auto">
         <div class="mb-16 text-center">
             <h3 class="text-3xl font-extrabold leading-normal tracking-tight text-gray-900 sm:text-4xl">
@@ -95,25 +95,27 @@
 
         <div class="grid col-gap-5 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
             @forelse ($trips as $trip)
-            <div class="border">
+            <div class="my-3 border-4 border-dashed hover:border-indigo-400">
                 <div class="py-3 text-sm font-medium text-center text-gray-500 uppercase bg-gray-200">
                     {{$trip->category->name}}
                 </div>
-                <img class="object-cover w-full rounded-lg shadow-md h-4/5 "
-                    src="{{asset('storage/'.$trip->photos[0]->image)}}" />
+                <a href="{{route('tours.details',[$trip->id,$trip->slug])}}">
+                <img class="object-cover w-full pt-5 rounded-lg shadow-md h-4/5"
+                    src="{{asset('storage/'.$trip->photos[0]->image)}}" alt="{{$trip->name}}" />
+                </a>
+                <div class="flex justify-between py-3 text-gray-500 bg-gray-200">
 
-                <div class="flex justify-between">
-
-                    <div class="text-md">
-                        <p class="font-semibold text-gray-900">{{$trip->duration}}</p>
+                    <div class="text-sm">
+                        <p class="font-semibold">{{$trip->duration}}</p>
+                    </div>
+                    <div class="text-xs">
+                        <p class="font-bold text-green-500 ">
+                           à partir de {{$trip->price}} €
+                        </p>
                     </div>
 
-                    <span class="text-xs font-bold text-indigo-600">
-                        {{$trip->price}} € par pers
-                    </span>
-
                 </div>
-                <hr />
+
             </div>
 
             @empty
